@@ -1,0 +1,19 @@
+.mainBody {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.userBody {
+   border-radius: 25px;
+    border: 2px solid rgb(0, 0, 0);
+    padding: 5px;  
+    padding-top: 1px
+}
+
+.articleMainBody {
+    border-radius: 25px;
+    border: 2px solid rgb(0, 0, 0);
+    padding: 20px;  
+    padding-top: 1px;
+}

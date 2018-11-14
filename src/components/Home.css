@@ -1,0 +1,49 @@
+a:link, a:visited {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 25px;
+    text-align: center; 
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10%;
+    border: none;
+    cursor: pointer;
+    display: block;
+    position: relative;
+    text-transform: uppercase;
+    margin: 0 auto;
+    
+}
+
+a:hover, a:active {
+    background-color: rgb(0, 30, 255);
+}
+
+.btn-primary {
+  border: 1px solid black;
+}
+
+img {
+  height: 50%;
+  width: 50%;
+}
+
+.thumbnail {
+    position: relative;
+}
+
+.caption {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    width: 100%;    
+}
+
+.thumbnail img {
+  opacity: 0.5;
+}
+
+body {
+  
+    
+}
