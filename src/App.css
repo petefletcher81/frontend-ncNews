@@ -12,29 +12,30 @@
 
 header {
   grid-area: "header";
-  background-color: rgb(81, 122, 157, 0.75);
-  border: solid 1px rgba(0, 0, 0, 0.714);
-  background-image: linear-gradient(to right, rgb(0, 94, 255) , rgb(0, 217, 255));
+  color: white;
+  background-color: white;
+  
 }
 
-.northcoderimg {
-  height: 50%;
-  width: 50%;
-  z-index: 2;
+.codeBanner {
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
 nav {
   grid-area: "nav";
-  background-color: rgba(81, 157, 92, 0.75);
+  
   border: solid 1px rgba(1, 1, 1, 0.714);
   display: flex;
   justify-content: space-evenly;
   color: white;
-  background-image: linear-gradient(to right, rgb(85, 0, 255) , rgb(119, 0, 255));
+  background-image: linear-gradient(to right, rgb(167, 167, 167) , rgb(119, 0, 255));
 }
 
 a:link, a:visited {
-    background-color: #366cf4;
+   
     color: white;
     padding: 5px 25px;
     text-align: center; 

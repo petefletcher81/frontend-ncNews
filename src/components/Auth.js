@@ -1,18 +1,22 @@
 import React from 'react';
 import './Auth.css';
+import loginMain from './utils/assets/images/loginPage.png'
+
+
 
 class Auth extends React.Component {
   state = {
     username: '',
     userID: ''
   }
-
+  
   render() {
-
+    
     return (
-
+      
       this.props.user ? this.props.children :
-        <form onSubmit={this.handleSubmit} className="authForm-container">
+      <form onSubmit={this.handleSubmit} className="authForm-container">
+      <img className="bgimg" src={loginMain} alt="news desk"/>
           <div className="form-group">
             <label className="form-text" htmlFor='username'>USERNAME </label>
             <input className="form-control" onChange={this.handleChange} id='username' type='text' placeholder="jessjelly" />

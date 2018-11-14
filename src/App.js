@@ -5,7 +5,8 @@ import Home from './components/Home';
 import Articles from './components/Articles';
 import Topics from './components/Topics';
 import Auth from './components/Auth';
-import * as api from './components/utils/api'
+import * as api from './components/utils/api';
+import codeBanner from './components/utils/assets/images/codeBanner.png'
 
 
 class App extends Component {
@@ -20,8 +21,8 @@ class App extends Component {
     return (
       <div className="App">
         <header>
-          <img className="northcoderimg" src="https://northcoders.com/images/logos/learn_to_code_manchester_original_second.png" alt="northcoders title" />
-
+          {/* <img className="northcoderimg" src="https://northcoders.com/images/logos/learn_to_code_manchester_original_second.png" alt="northcoders title" /> */}
+          <img className="codeBanner" src={codeBanner} alt="sourceCode" />
         </header>
 
         <nav>
