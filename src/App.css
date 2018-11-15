@@ -8,6 +8,7 @@
   "nav"
   "main"
   "footer";
+  overflow-y: scroll;
 }
 
 header {

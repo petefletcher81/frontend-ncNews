@@ -36,3 +36,10 @@ h3 {
     box-shadow: 20px;
     cursor: pointer;
 }
+
+.commentsHeaderImg {
+    justify-content: center;
+    height: auto;
+    width: 100%;
+    
+}

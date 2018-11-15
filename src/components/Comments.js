@@ -4,6 +4,7 @@ import AddComment from './AddComment';
 //import { navigate } from '@reach/router';
 import Vote from './utils/Vote';
 import './Comments.css';
+import commentsHeader from './utils/assets/images/commentsHeader.png'
 
 
 class Comments extends React.Component {
@@ -15,10 +16,15 @@ class Comments extends React.Component {
   }
   render() {
 
-    console.log(this.props.user.userID)
+    //console.log(this.props.user.userID)
     return (
+      <>
       <div>
-        <h1></h1>
+        <img className="commentsHeaderImg" src={commentsHeader} alt="commentsHeader" />
+      </div>
+
+      <div>
+        
         <button className='formBtn' onClick={this.showAddComment}>Add Comment</button>
         <p></p>
         {(this.state.addComment ?
@@ -36,6 +42,7 @@ class Comments extends React.Component {
           </div>
         })}
       </div>
+      </>
     );
   }
 

@@ -20,8 +20,22 @@ background-image: url('https://images.pexels.com/photos/158651/news-newsletter-n
 }
 
 .column {
-    margin-top: 15%;
+    margin-top: 1%;
     float: left;
     width: 50%;
     padding: 10px;
 }
+
+
+
+.homeHead {
+    justify-content: center;
+    height: auto;
+    width: 100%;
+}
+
+.latestArticles {
+    margin-left: -15%;
+    height: auto;
+    width: 50%;
+  }

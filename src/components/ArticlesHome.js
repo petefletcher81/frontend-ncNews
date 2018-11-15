@@ -2,7 +2,7 @@ import React from 'react';
 import './ArticlesHome.css';
 import { Link } from '@reach/router';
 import Votes from './utils/Vote';
-
+import latestArticles from './utils/assets/images/latestArticlesHeading.png'
 
 
 class ArticlesHomes extends React.Component {
@@ -14,7 +14,7 @@ class ArticlesHomes extends React.Component {
     if (this.props.loading) return <h1>loading</h1>
     return (
       <div >
-        <h1>Latest Articles</h1>
+        <img src={latestArticles} className="latestArticlesImg" alt='latestArticles'/>
         {this.props.articles.map(article => {
           return (
             <div className="row article-row">

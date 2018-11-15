@@ -12,6 +12,7 @@
     color: white;;
     box-shadow: 5px black;
     margin-bottom: 20px;
+    background-color: rgba(100, 95, 95, 0.5);
 }
 
 .article-row {
@@ -29,4 +30,8 @@
     background-color: red;
 }
 
+.latestArticles {
+    max-width: 100px;
+    max-height: 100px;
+}
 
