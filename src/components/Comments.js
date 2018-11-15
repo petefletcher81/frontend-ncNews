@@ -2,23 +2,24 @@ import React from 'react';
 import * as api from './utils/api';
 import AddComment from './AddComment';
 //import { navigate } from '@reach/router';
-import Vote from './utils/Vote'
+import Vote from './utils/Vote';
+import './Comments.css';
 
 
 class Comments extends React.Component {
   state = {
     comments: [],
-
     loading: true,
     addComment: false,
     reRender: false
   }
   render() {
 
+    console.log(this.props.user.userID)
     return (
       <div>
-        <h1>Comments</h1>
-        <button onClick={this.showAddComment}>Add Comment</button>
+        <h1></h1>
+        <button className='formBtn' onClick={this.showAddComment}>Add Comment</button>
         <p></p>
         {(this.state.addComment ?
           <AddComment article_id={this.props.article_id} userObj={this.props.user}
@@ -27,12 +28,11 @@ class Comments extends React.Component {
             addComment={this.addComment} /> : null)}
         <br></br>
         {this.state.comments.map(comment => {
-          return <div key={comment._id}>{comment.body}
-            {console.log(comment)}
+          return <div className="commentCreated" key={comment._id}>{comment.body}
             <p>{comment.created_by.username}</p>
             <Vote section={'comments'} votes={comment.votes} comment_id={comment._id} />
             <p></p>
-            <button onClick={this.handleDelete} value={comment._id}>Delete</button>
+            {this.props.user.userID === comment.created_by._id ? <button className="deleteBtn" onClick={this.handleDelete} value={comment._id}>Delete</button> : null}
           </div>
         })}
       </div>
@@ -40,7 +40,6 @@ class Comments extends React.Component {
   }
 
   componentDidUpdate = (prevProps, prevState) => {
-
     if (prevState !== this.state) {
       this.fetchComments()
     }

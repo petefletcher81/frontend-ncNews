@@ -1,7 +1,15 @@
 .topicsFlex {
-    border-radius: 25px;
-    border: 2px solid #73AD21;
-    padding: 20px; 
-    display: flex;
-    justify-content: center;
+     border: 1px solid black;
+     padding: 10%;
+     background-color: red;
+     border-radius: 10px;
+     box-shadow: 1px 2px;
 }
+
+.topicContainer {
+    display: block;
+     padding-bottom: 10px;
+     margin-left: 25%;
+     margin-right: 25%;    
+}
+

@@ -3,6 +3,7 @@ import { Link, Router } from '@reach/router';
 import * as api from './utils/api';
 import TopicsHome from './TopicsHome';
 import Topic from './Topic'
+import './Topics.css'
 
 class Topics extends Component {
   state = {
@@ -12,7 +13,7 @@ class Topics extends Component {
     console.log(this.props.user)
     return (
       <div>
-        <nav>
+        <nav className="topicNav" >
           <Link to="./">Topics</Link>
         </nav>
 

@@ -13,27 +13,28 @@ class AddArticle extends React.Component {
     return (
       <div>
         <h2>Add Article</h2>
-        <form onSubmit={this.handleSubmit}>
+        <form className="addArticleForm" onSubmit={this.handleSubmit}>
           <label htmlFor='postTitle'> Article Title: </label>
-          <input onChange={this.handleChange} id='postTitle' type='text' />
+          <input className="articleTitle" onChange={this.handleChange} id='postTitle' type='text' />
           <br></br>
           <br></br>
 
-          <label htmlFor='postBody' > Article</label>
+          <label htmlFor='postBody' > Article Body</label>
           <p></p>
-          <textarea onChange={this.handleChange} id='postBody' type='text'
+          <textarea className="articleBodySubmit" onChange={this.handleChange} id='postBody' type='text'
           />
           <br></br>
 
           <label htmlFor='belongs_to' />
-          <select onChange={this.handleChange} id="belongs_to" required>
+          <select className='selectForm' onChange={this.handleChange} id="belongs_to" required>
             <option key="pick">Pick a Topic</option>
             <option key="coding">coding</option>
             <option key="football">football</option>
             <option key='cooking'>cooking</option>
           </select>
-
-          <button onClick={this.handleSubmit}>Submit</button>
+          <p></p>
+          <button className="articleSubmit" onClick={this.handleSubmit}>Submit</button>
+          <p></p>
 
         </form>
       </div>

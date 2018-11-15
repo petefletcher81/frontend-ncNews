@@ -34,7 +34,7 @@ class Article extends React.Component {
         </div>
         <p></p>
 
-        <button onClick={this.toggleComments}>Show comments</button>
+        <button className="showCommentBtn" onClick={this.toggleComments}>Show comments</button>
         {(this.state.commentsToggle ? <Comments article_id={this.state.singleArticle.article._id} user={this.props.user} /> : null)}
 
       </div >

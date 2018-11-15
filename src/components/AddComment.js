@@ -8,13 +8,15 @@ class AddComment extends React.Component {
   }
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label htmlFor='commentBody'> Comment : </label>
-        <textarea onChange={this.handleChange} id='commentBody' type='text' value={this.state.newComment} />
-        <p>Comment created by {this.props.user}</p>
-        <button onClick={this.handleSubmit}>Submit</button>
+      <div className="formDiv">
+        <form className='form' onSubmit={this.handleSubmit}>
+          <label className="commentLabel" htmlFor='commentBody'> Post A Comment : </label>
+          <textarea className="textArea" onChange={this.handleChange} id='commentBody' type='text' value={this.state.newComment} />
+          <p>{this.props.user}</p>
+          <button className="subButton" onClick={this.handleSubmit}>Submit</button>
 
-      </form>
+        </form>
+      </div>
     );
   }
   handleChange = event => {

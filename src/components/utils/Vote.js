@@ -1,17 +1,18 @@
 import React from 'react';
 import * as api from './api'
+import './Vote.css';
 
 class Votes extends React.Component {
   state = {
     voteChanged: 0
   }
   render() {
-    console.log(this.props)
+
     return (
-      <div>
-        <button onClick={() => { this.vote('up') }} disabled={this.state.voteChanged === 1}>Give it a like</button>
-        <p>Votes : {this.props.votes + this.state.voteChanged}</p>
-        <button onClick={() => { this.vote('down') }} disabled={this.state.voteChanged === -1}>This is no good</button>
+      <div className="container-btns">
+        <button className="voteBtn" onClick={() => { this.vote('up') }} disabled={this.state.voteChanged === 1}>LIKE</button>
+        <p><strong>VOTES {this.props.votes + this.state.voteChanged}</strong></p>
+        <button className="voteBtn" onClick={() => { this.vote('down') }} disabled={this.state.voteChanged === -1}>DISLIKE</button>
       </div >
     );
   }

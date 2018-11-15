@@ -10,11 +10,11 @@ class Topic extends React.Component {
     addArticle: false
   }
   render() {
-    console.log(this.props.topic_slug, 'this is topic')
+    // console.log(this.props.topic_slug, 'this is topic')
     if (this.state.loading) return <div><h2>Loading...</h2></div>
     return (
       <div className="mainBody">
-        <button onClick={this.toggleArticle}>Add Article</button>
+        <button className="addArticleBtn" onClick={this.toggleArticle}>Add Article</button>
         {(this.state.addArticle ?
           <AddArticle addArticle={this.addArticle} topic_slug={this.props.topic_slug}
             user={this.props.user} /> : null)}

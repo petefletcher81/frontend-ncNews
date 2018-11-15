@@ -1,5 +1,32 @@
+ .articlesHome  {
+    overflow-y: scroll;
+ } 
+    
+   
 .articleBody {
     border-radius: 25px;
     border: 2px solid #73AD21;
-    padding: 20px;    
+    padding: 20px;  
+    border:  1px solid black; 
+    overflow: scroll;
+    color: white;;
+    box-shadow: 5px black;
+    margin-bottom: 20px;
 }
+
+.article-row {
+    display: flex;
+    height: 50%;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 20%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.articlesBtn {
+    color: white;
+    background-color: red;
+}
+
+

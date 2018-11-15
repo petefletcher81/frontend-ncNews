@@ -1,0 +1,22 @@
+.navLink {
+    border-top: 1px solid black;
+}
+
+.articlesHome {
+  background-image: url('https://images.pexels.com/photos/158651/news-newsletter-newspaper-information-158651.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+}
+
+.articlesMainBody {
+  border-radius: 25px;
+    border: 2px solid #73AD21;
+    padding: 20px;  
+    border:  1px solid black; 
+    overflow: scroll;
+    color: white;
+    box-shadow: 5px black;
+    margin-bottom: 20px;
+}
+
+.articlesHome img {
+  opacity: 0.6;
+}

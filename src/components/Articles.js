@@ -3,6 +3,7 @@ import ArticlesHome from '../components/ArticlesHome';
 import React, { Component } from 'react';
 import { Link, Router } from '@reach/router';
 import * as api from './utils/api';
+import './Articles.css'
 
 
 
@@ -15,12 +16,11 @@ class Articles extends Component {
     //console.log(this.props, 'articles')
     return (
       <div>
-        <nav>
+        <nav className="navLink">
           <Link to='./'>ArticlesHome</Link>
-
         </nav>
 
-        <Router>
+        <Router >
           <ArticlesHome path='/' articles={this.state.newArticles} />
           <Article path=':article_id' user={this.props.user} />
 

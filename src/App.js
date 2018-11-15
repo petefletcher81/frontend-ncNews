@@ -11,32 +11,31 @@ import codeBanner from './components/utils/assets/images/codeBanner.png'
 
 class App extends Component {
   state = {
-    _id: "5bdb35ad0f62a068584ce8fe",
-    username: "tickle122",
-    name: "Tom Tickle",
-    avatar_url: "https://www.spiritsurfers.net/monastery/wp-content/uploads/_41500270_mrtickle.jpg",
-    __v: 0
+    _id: "5bdb35ad0f62a068584ce903",
+    username: "jessjelly",
   }
   render() {
     return (
       <div className="App">
         <header>
-          {/* <img className="northcoderimg" src="https://northcoders.com/images/logos/learn_to_code_manchester_original_second.png" alt="northcoders title" /> */}
+
           <img className="codeBanner" src={codeBanner} alt="sourceCode" />
         </header>
 
-        <nav>
-          <Link to='/'>Home</Link>
-          <Link to='articles'>Articles</Link>
-          <Link to='topics'>Topics</Link>
-          <Link to='logout' onClick={this.logout}>Logout</Link>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+
+          <Link className="flex-sm-fill text-sm-center nav-link" to='/'>Home</Link>
+          <Link className="flex-sm-fill text-sm-center nav-link" to='articles'>Articles</Link>
+          <Link className="flex-sm-fill text-sm-center nav-link" to='topics'>Topics</Link>
+          <Link className="flex-sm-fill text-sm-center nav-link" to='logout' onClick={this.logout}>Logout</Link>
 
         </nav>
+
         <Auth user={this.state.username} login={this.login}>
-          <Router>
+          <Router className="articlesHome">
             <Home path='/' user={this.state.username} />
             <Articles path='articles/*' user={this.state} />
-            <Topics path='topics/*' user={this.state} />
+            <Topics className="topicsHome" path='topics/*' user={this.state} />
           </Router>
         </Auth>
 

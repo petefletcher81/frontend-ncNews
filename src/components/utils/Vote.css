@@ -1,0 +1,11 @@
+.voteBtn {
+  color: white;
+  background-color: red;
+  border-radius: 10%;
+  cursor: pointer;
+}
+
+.container-btns {
+  display: flex;
+  justify-content: space-evenly;
+}

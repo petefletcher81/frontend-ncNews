@@ -1,0 +1,57 @@
+.commentCreated {
+   background-color: rgba(100, 95, 95, 0.6);
+    border-radius: 10px;
+    border: 2px solid rgb(0, 0, 0);
+    padding: 20px;  
+    padding-top: 1px;
+    color: white;
+    margin-bottom: 20px;
+    
+}
+
+.deleteBtn {
+  border-radius: 5px;
+  background-color: red;
+  color: white;
+}
+
+.formBtn {
+  border-radius: 5px;
+  box-shadow: 1px 2px;
+  cursor: pointer;
+}
+
+.form {
+  background-color: rgba(100, 95, 95, 0.6);
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  border-radius: 5%;
+  border: 2px solid black;
+}
+
+
+.commentLabel {
+  padding-top: 5%;
+  padding-bottom: 3%;
+  color: white;
+}
+
+.textArea {
+  padding: 15%;
+  border-radius: 5px;
+  box-shadow: 1px 1px;
+  border: 2px solid black;
+}
+
+.subButton {
+  border-radius: 5px;
+  color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 50px;
+  width: 50%;
+  margin-left: 25%;
+  border: 1px solid black;
+}
