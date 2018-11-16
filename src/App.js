@@ -37,12 +37,12 @@ class App extends Component {
 
         <Auth user={this.state.username} login={this.login}>
           {console.log(this.state.error)}
-          this.state.error ? <Error /> :
-            <Router className="articlesHome">
+          {/* {this.state.error ? <Error /> : */}
+          <Router className="articlesHome">
             <Home path='/' user={this.state.username} />
             <Articles path='articles/*' user={this.state} />
             <Topics className="topicsHome" path='topics/*' user={this.state} />
-          </Router>}
+          </Router>
         </Auth>
 
         <footer>Pete Fletcher 2018</footer>
@@ -64,6 +64,7 @@ class App extends Component {
         error: true
       })
     })
+
   }
 
 

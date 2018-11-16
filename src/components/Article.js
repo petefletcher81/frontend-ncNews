@@ -27,7 +27,7 @@ class Article extends React.Component {
           <h1>{this.state.singleArticle.article.title}</h1>
           <div>{this.state.singleArticle.article.body}</div>
 
-          <p></p>
+          <p>{this.state.singleArticle.article.moment('created_by').format("MMM Do YY")}</p>
 
           <Vote article_id={this.props.article_id} votes={this.state.singleArticle.article.votes} section={'articles'} />
           <br></br>
