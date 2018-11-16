@@ -2,7 +2,7 @@ import React from 'react';
 import * as api from './api'
 import './Vote.css';
 
-class Votes extends React.Component {
+class VoteComment extends React.Component {
   state = {
     voteChanged: 0
   }
@@ -17,10 +17,12 @@ class Votes extends React.Component {
     );
   }
   vote = (direction) => {
-    const article_id = this.props.article_id
+    const comment_id = this.props.comment_id
     const section = this.props.section
 
-    api.votePatch(article_id, section, direction).then(res => {
+    // console.log(this.props.comment_id)
+
+    api.votePatchComment(comment_id, section, direction).then(res => {
       // console.log(res)
       console.log('patch worked')
     })
@@ -30,7 +32,4 @@ class Votes extends React.Component {
   }
 }
 
-
-
-
-export default Votes;
+export default VoteComment;

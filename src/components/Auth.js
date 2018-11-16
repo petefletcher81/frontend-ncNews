@@ -1,7 +1,7 @@
 import React from 'react';
 import './Auth.css';
 import loginMain from './utils/assets/images/loginPage.png'
-import { navigate } from '@reach/router';
+// import { navigate } from '@reach/router';
 
 
 
@@ -22,6 +22,7 @@ class Auth extends React.Component {
             <label className="form-text" htmlFor='username'>USERNAME </label>
             <input className="form-control" onChange={this.handleChange} id='username' type='text' placeholder="jessjelly" />
             <button className="form-control" onClick={this.handleChange}>LOGIN</button>
+            {this.props.error && <h4>invalid user</h4>}
           </div>
         </form>
 
@@ -36,7 +37,7 @@ class Auth extends React.Component {
   }
 
   handleSubmit = (event) => {
-    console.log(event)
+    // (event)console.log
     event.preventDefault()
     this.props.login(this.state.username)
   }

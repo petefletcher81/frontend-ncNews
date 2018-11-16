@@ -11,7 +11,7 @@ class Topic extends React.Component {
     addArticle: false
   }
   render() {
-    console.log(this.state.singleTopic.newArticle)
+    // console.log(this.state.singleTopic.newArticle)
     if (this.state.loading) return <div><h2>Loading...</h2></div>
     return (
       <div className="mainBody">
@@ -52,7 +52,7 @@ class Topic extends React.Component {
   }
 
   toggleArticle = () => {
-    console.log('ive been clicked')
+    // console.log('ive been clicked')
     const doesShow = this.state.addArticle;
     this.setState({ addArticle: !doesShow })
   }

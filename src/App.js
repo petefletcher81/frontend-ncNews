@@ -7,7 +7,7 @@ import Topics from './components/Topics';
 import Auth from './components/Auth';
 import * as api from './components/utils/api';
 import codeBanner from './components/utils/assets/images/codeBanner.png'
-import Error from './components/Error'
+import Errors from './components/Error'
 
 
 class App extends Component {
@@ -35,13 +35,15 @@ class App extends Component {
 
         </nav>
 
-        <Auth user={this.state.username} login={this.login}>
-          {console.log(this.state.error)}
-          {/* {this.state.error ? <Error /> : */}
+        <Auth user={this.state.username} error={this.state.error} login={this.login}>
+          {/* {console.log(this.state.error)} */}
+
+
           <Router className="articlesHome">
             <Home path='/' user={this.state.username} />
             <Articles path='articles/*' user={this.state} />
             <Topics className="topicsHome" path='topics/*' user={this.state} />
+            <Errors path='/error' error={this.state.error} />
           </Router>
         </Auth>
 

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Error = () => {
-  console.log('hello')
+  // console.log('hello')
   return (
     <h1>Error</h1>
   );

@@ -2,7 +2,8 @@ import React from 'react';
 import './ArticlesHome.css';
 import { Link } from '@reach/router';
 import Votes from './utils/Vote';
-import latestArticles from './utils/assets/images/latestArticlesHeading.png'
+import latestArticles from './utils/assets/images/latestArticlesHeading.png';
+import moment from 'moment'
 
 
 class ArticlesHomes extends React.Component {
@@ -20,8 +21,10 @@ class ArticlesHomes extends React.Component {
             <div className="row article-row">
               <div className="articleBody" key={article.title} ><h3>{article.title}</h3>
                 <p>{article.body}</p>
-                <Votes article_id={article.article_id} votes={article.votes} section={'articles'} />
+                {/* {console.log(article)} */}
+                <Votes article_id={article._id} votes={article.votes} section={'articles'} />
                 <button className="articlesBtn"><Link to={`${article._id}`}>Read More</Link></button>
+                <p><strong>{moment(article.created_at).format("MMM Do YY")}</strong></p>
               </div>
             </div>
           )

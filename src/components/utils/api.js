@@ -18,9 +18,9 @@ export const getArticle = async (article_id) => {
 }
 
 export const getTopic = async (topic_slug) => {
-  console.log(topic_slug)
+  // console.log(topic_slug)
   const { data } = await axios.get(`${BASE_URL}/topics/${topic_slug}/articles`)
-  console.log(data, 'this is data')
+  // console.log(data, 'this is data')
   return data.newArticle;
 }
 
@@ -63,7 +63,13 @@ export const deleteComment = async (commentID) => {
 }
 
 export const votePatch = async (article_id, section, direction) => {
-  console.log(article_id, section, direction)
+
   const { data } = await axios.patch(`${BASE_URL}/${section}/${article_id}?vote=${direction}`)
+  return data
+}
+
+export const votePatchComment = async (comment_id, section, direction) => {
+  // console.log(comment_id, section, direction)
+  const { data } = await axios.patch(`${BASE_URL}/${section}/${comment_id}?vote=${direction}`)
   return data
 }
