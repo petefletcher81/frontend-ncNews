@@ -7,14 +7,18 @@ import Topics from './components/Topics';
 import Auth from './components/Auth';
 import * as api from './components/utils/api';
 import codeBanner from './components/utils/assets/images/codeBanner.png'
+import Error from './components/Error'
 
 
 class App extends Component {
   state = {
-    _id: "5bdb35ad0f62a068584ce903",
-    username: "jessjelly",
+    _id: "",
+    username: "",
+    error: false
   }
   render() {
+
+
     return (
       <div className="App">
         <header>
@@ -32,27 +36,37 @@ class App extends Component {
         </nav>
 
         <Auth user={this.state.username} login={this.login}>
-          <Router className="articlesHome">
+          {console.log(this.state.error)}
+          this.state.error ? <Error /> :
+            <Router className="articlesHome">
             <Home path='/' user={this.state.username} />
             <Articles path='articles/*' user={this.state} />
             <Topics className="topicsHome" path='topics/*' user={this.state} />
-          </Router>
+          </Router>}
         </Auth>
 
         <footer>Pete Fletcher 2018</footer>
       </div>
     );
   }
+
   login = (username) => {
 
     api.userLogin(username).then(user => {
 
       this.setState({
         username: user,
-        userID: user[0]._id
+        userID: user[0]._id,
+        error: null
+      })
+    }).catch(err => {
+      this.setState({
+        error: true
       })
     })
   }
+
+
   logout = () => {
     this.setState({
       username: null

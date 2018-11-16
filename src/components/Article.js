@@ -15,7 +15,7 @@ class Article extends React.Component {
   }
   render() {
     if (this.state.loading) return <div><h2>Loading...</h2></div>
-    console.log(this.state.singleArticle.article.votes)
+    //console.log(this.state.singleArticle.article)
 
     return (
       <div className="mainBody">
@@ -32,7 +32,7 @@ class Article extends React.Component {
           <Vote article_id={this.props.article_id} votes={this.state.singleArticle.article.votes} section={'articles'} />
           <br></br>
         </div>
-        <p></p>
+        <p>{this.state.singleArticle.article.comment_count}</p>
 
         <button className="showCommentBtn" onClick={this.toggleComments}>Show comments</button>
         {(this.state.commentsToggle ? <Comments article_id={this.state.singleArticle.article._id} user={this.props.user} /> : null)}

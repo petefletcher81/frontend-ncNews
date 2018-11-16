@@ -1,6 +1,7 @@
 import React from 'react';
 import './Auth.css';
 import loginMain from './utils/assets/images/loginPage.png'
+import { navigate } from '@reach/router';
 
 
 
@@ -9,14 +10,14 @@ class Auth extends React.Component {
     username: '',
     userID: ''
   }
-  
+
   render() {
-    
+
     return (
-      
+
       this.props.user ? this.props.children :
-      <form onSubmit={this.handleSubmit} className="authForm-container">
-      <img className="bgimg" src={loginMain} alt="news desk"/>
+        <form onSubmit={this.handleSubmit} className="authForm-container">
+          <img className="bgimg" src={loginMain} alt="news desk" />
           <div className="form-group">
             <label className="form-text" htmlFor='username'>USERNAME </label>
             <input className="form-control" onChange={this.handleChange} id='username' type='text' placeholder="jessjelly" />
@@ -35,10 +36,11 @@ class Auth extends React.Component {
   }
 
   handleSubmit = (event) => {
-
+    console.log(event)
     event.preventDefault()
     this.props.login(this.state.username)
   }
+
 }
 
 export default Auth;

@@ -14,7 +14,7 @@ class ArticlesHomes extends React.Component {
     if (this.props.loading) return <h1>loading</h1>
     return (
       <div >
-        <img src={latestArticles} className="latestArticlesImg" alt='latestArticles'/>
+        <img src={latestArticles} className="latestArticlesImg" alt='latestArticles' height="" width="80%" />
         {this.props.articles.map(article => {
           return (
             <div className="row article-row">

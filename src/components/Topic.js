@@ -1,7 +1,8 @@
 import React from 'react';
 import * as api from './utils/api';
 import './Topic.css';
-import AddArticle from './AddArticle'
+import AddArticle from './AddArticle';
+import { Link } from '@reach/router'
 
 class Topic extends React.Component {
   state = {
@@ -10,7 +11,7 @@ class Topic extends React.Component {
     addArticle: false
   }
   render() {
-    // console.log(this.props.topic_slug, 'this is topic')
+    console.log(this.state.singleTopic.newArticle)
     if (this.state.loading) return <div><h2>Loading...</h2></div>
     return (
       <div className="mainBody">
@@ -22,13 +23,20 @@ class Topic extends React.Component {
         <h1>{this.props.topic_slug}</h1>
 
         {this.state.singleTopic.map(articles => {
-          return <div key={articles._id} className="TopicMainBody" >{articles.title}
+          return <div key={articles._id} className="TopicMainBody" ><strong>{articles.title}</strong>
             <div className="userName">
-              <p>{articles.created_by.username}</p>
-              <img src={articles.created_by.avatar_url} alt="userAvatar" /></div></div>
+              <p></p>
+              <p>{articles.body}</p>
+              <p>Comment Count : {articles.comment_count}</p>
+              <div>
+                <p><strong>{articles.created_by.username}</strong></p>
+                <img src={articles.created_by.avatar_url} alt="userAvatar" /></div></div>
+            <p></p>
+            <Link to={`/articles/${articles._id}`}><button>More info: </button></Link>
+          </div>
 
         })
-        }}>
+        }
       </div >
     );
   }
