@@ -65,7 +65,16 @@ class Topic extends React.Component {
         singleTopic: topic,
         loading: false
       })
-    });
+    }).catch(error => {
+      console.log(this.props)
+      this.props.navigate('/error', {
+        state: {
+          status: 404,
+          from: 'topic'
+        }
+      })
+    }
+    )
   }
 }
 

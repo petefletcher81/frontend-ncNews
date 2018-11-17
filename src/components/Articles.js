@@ -1,9 +1,10 @@
 import Article from '../components/Article';
 import ArticlesHome from '../components/ArticlesHome';
 import React, { Component } from 'react';
-import { Link, Router } from '@reach/router';
+import { Link, Router, navigate } from '@reach/router';
 import * as api from './utils/api';
-import './Articles.css'
+import './Articles.css';
+
 
 
 
@@ -34,12 +35,20 @@ class Articles extends Component {
 
   fetchArticles = () => {
     api.getArticles().then(articles => {
-      console.log(articles)
       this.setState({
         newArticles: articles,
         loading: false
       })
-    });
+    }).catch(error => {
+      console.log(this.props)
+      this.props.navigate('/error', {
+        state: {
+          status: 404,
+          from: 'articles'
+        }
+      })
+    }
+    )
   }
 }
 

@@ -7,7 +7,7 @@ import loginMain from './utils/assets/images/loginPage.png'
 
 class Auth extends React.Component {
   state = {
-    username: '',
+    username: 'jessjelly',
     userID: ''
   }
 
@@ -20,8 +20,8 @@ class Auth extends React.Component {
           <img className="bgimg" src={loginMain} alt="news desk" />
           <div className="form-group">
             <label className="form-text" htmlFor='username'>USERNAME </label>
-            <input className="form-control" onChange={this.handleChange} id='username' type='text' placeholder="jessjelly" />
-            <button className="form-control" onClick={this.handleChange}>LOGIN</button>
+            <input className="form-control" onChange={this.handleChange} id='username' type='text' value={this.state.username} placeholder="jessjelly" />
+            <button className="form-control" onClick={this.handleChange} >LOGIN</button>
             {this.props.error && <h4>invalid user</h4>}
           </div>
         </form>

@@ -64,7 +64,15 @@ class Article extends React.Component {
         singleArticle: article,
         loading: false
       })
-    });
+    }).catch(error => {
+      this.props.navigate('/error', {
+        state: {
+          status: 404,
+          from: 'article'
+        }
+      })
+    }
+    )
   }
 }
 

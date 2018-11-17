@@ -6,13 +6,19 @@ class AddArticle extends React.Component {
     postTitle: '',
     postBody: '',
     belongs_to: '',
-    created_by: ''
+    created_by: '',
+    error: '',
+    
   }
+  
   render() {
-
+    
+    
+    
     return (
       <div>
         <h2>Add Article</h2>
+        {this.state.error && <h3>{this.state.error}</h3>}
         <form className="addArticleForm" onSubmit={this.handleSubmit}>
           <label htmlFor='postTitle'> Article Title: </label>
           <input className="articleTitle" onChange={this.handleChange} id='postTitle' type='text' />
@@ -58,10 +64,17 @@ class AddArticle extends React.Component {
     api.postArticle(this.state).then(newArticle => {
       this.props.addArticle(newArticle)
     })
+    if(this.state.postBody) {
     this.setState({
-      newComment: ''
+      postBody: '',
+      error: ''
     })
-
+  }
+  else {
+    this.setState({
+      error: 'Please tpye into the article body'
+    })
+  }
   }
 }
 
