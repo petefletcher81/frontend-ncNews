@@ -21,7 +21,7 @@ class Votes extends React.Component {
     const section = this.props.section
 
     api.votePatch(article_id, section, direction).then(res => {
-      // console.log(res)
+
       console.log('patch worked')
     })
     this.setState({

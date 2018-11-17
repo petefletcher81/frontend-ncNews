@@ -13,7 +13,7 @@ class Articles extends Component {
     loading: true
   }
   render() {
-    //console.log(this.props, 'articles')
+
     return (
       <div>
         <nav className="navLink">
@@ -23,10 +23,7 @@ class Articles extends Component {
         <Router >
           <ArticlesHome path='/' articles={this.state.newArticles} />
           <Article path=':article_id' user={this.props.user} />
-
         </Router>
-
-
       </div>
 
     );
@@ -37,6 +34,7 @@ class Articles extends Component {
 
   fetchArticles = () => {
     api.getArticles().then(articles => {
+      console.log(articles)
       this.setState({
         newArticles: articles,
         loading: false

@@ -2,7 +2,7 @@ import React from 'react';
 import * as api from './utils/api';
 import './Article.css';
 import Comments from './Comments';
-import Vote from './utils/Vote';
+import Vote from './utils/Vote.js';
 import moment from 'moment';
 
 
@@ -24,7 +24,7 @@ class Article extends React.Component {
           <h3>Created By : {this.state.singleArticle.article.created_by.username}</h3>
         </div>
         <p></p>
-        <div className="articleMainBody">
+        <div className="articleainbody">
           <h1>{this.state.singleArticle.article.title}</h1>
           <div>{this.state.singleArticle.article.body}</div>
 
@@ -38,7 +38,7 @@ class Article extends React.Component {
         <button className="showCommentBtn" onClick={this.toggleComments}>Show comments</button>
         {(this.state.commentsToggle ? <Comments article_id={this.state.singleArticle.article._id} user={this.props.user} /> : null)}
 
-      </div >
+      </div>
     );
   }
 
