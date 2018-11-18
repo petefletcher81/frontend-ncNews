@@ -1,16 +1,17 @@
 .topicsFlex {
      border: 1px solid black;
-     padding: 10%;
+     padding: 5%;
      background-color: red;
      border-radius: 10px;
      box-shadow: 1px 2px;
 }
 
 .topicContainer {
-    display: block;
-     padding-bottom: 10px;
-     margin-left: 25%;
-     margin-right: 25%;    
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns:  1fr 1fr 1fr;
+    grid-gap: 20px;
+    
 }
 
 .topicsHeader {
@@ -19,6 +20,41 @@
     max-height: 200px;
 }
 
-.carousel {
-    margin-left: 25%;
+.imageLinks {
+    display: grid;
+    grid-template-columns:  1fr 1fr 1fr;
+    
+}
+
+.imageLinks img {
+    height: 150px;
+   width: 250px;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+    padding-bottom: 20px;
+}
+.image-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);     
+}
+
+@media (max-width:840px) {
+    .imageLinks {
+        display: grid;
+        grid-template-columns:  1fr;
+        
+    }
+    .topicContainer {
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns:  1fr 1fr 1fr;
+        grid-gap: 20px;
+        
+    }
 }
