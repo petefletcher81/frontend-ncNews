@@ -1,7 +1,10 @@
  .articlesHome  {
     overflow-y: scroll;
  } 
-    
+
+ .display-4 {
+     height: 50px;
+ }
    
 .articleBody {
     border-radius: 25px;

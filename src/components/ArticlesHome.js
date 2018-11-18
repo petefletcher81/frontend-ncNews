@@ -3,7 +3,8 @@ import './ArticlesHome.css';
 import { Link } from '@reach/router';
 import Votes from './utils/Vote.js';
 import latestArticles from './utils/assets/images/latestArticlesHeading.png';
-import moment from 'moment'
+import moment from 'moment';
+
 
 
 class ArticlesHomes extends React.Component {
@@ -11,11 +12,13 @@ class ArticlesHomes extends React.Component {
 
   }
   render() {
-
+    console.log(this.props)
     if (this.props.loading) return <h1>loading</h1>
     return (
       <div >
+        
         <img src={latestArticles} className="latestArticlesImg" alt='latestArticles' height="" width="80%" />
+       
         {this.props.articles.map(article => {
           return (
 

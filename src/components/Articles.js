@@ -1,9 +1,10 @@
 import Article from '../components/Article';
 import ArticlesHome from '../components/ArticlesHome';
 import React, { Component } from 'react';
-import { Link, Router, navigate } from '@reach/router';
+import { Link, Router} from '@reach/router';
 import * as api from './utils/api';
 import './Articles.css';
+import SearchInput from './searchInput';
 
 
 
@@ -19,11 +20,13 @@ class Articles extends Component {
       <div>
         <nav className="navLink">
           <Link to='./'>ArticlesHome</Link>
+          <Link to='articles/search'>Search All Articles</Link>
         </nav>
 
         <Router >
           <ArticlesHome path='/' articles={this.state.newArticles} />
           <Article path=':article_id' user={this.props.user} />
+          <SearchInput path='articles/search' articles={this.state.newArticles}/>
         </Router>
       </div>
 
