@@ -12,6 +12,8 @@ Northcoders news has been created with the following:-
 [Reach Router](https://reach.tech/router)
 [Bootstrap 4](https://getbootstrap.com/)
 
+[The live version can be found here](https://zealous-swirles-f0ca97.netlify.com)
+
 This front end project aims to create a greate user experience, allowing the user to implement
 C.R.U.D operations.
 
@@ -90,5 +92,13 @@ is free.
 
 [Deploy in less than 30 secs](https://www.netlify.com/blog/2016/07/22/deploy-react-apps-in-less-than-30-seconds/)
 
+##Author
+
+Pete Fletcher
+
+##Acknowledgements
+
+All the Lecturers at Northcoders for they guidance.
+In addition, a fantastic cohort for support and who acted as great sounding boards.
 
 
