@@ -5,7 +5,7 @@
   cursor: pointer;
 }
 
-.container-btns {
+.container-btns-comment {
   display: grid;
   grid-template-columns: 1fr;
   padding-top: 20%;

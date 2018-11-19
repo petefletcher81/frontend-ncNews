@@ -4,6 +4,7 @@ import './Article.css';
 import Comments from './Comments';
 import Vote from './utils/Vote.js';
 import moment from 'moment';
+import PropTypes from 'prop-types';
 
 
 class Article extends React.Component {
@@ -15,29 +16,35 @@ class Article extends React.Component {
     reRender: false
   }
   render() {
-    if (this.state.loading) return <div><h2>Loading...</h2></div>
-    //console.log(this.state.singleArticle.article)
+    const { loading, singleArticle, commentsToggle } = this.state;
+    const { article_id, user } = this.props
+
+    if (loading) return <div><h2>Loading...</h2></div>
+    console.log(typeof article_id, typeof user)
 
     return (
       <div className="mainBody">
-        <div className="userBody">
-          <h3>Created By : {this.state.singleArticle.article.created_by.username}</h3>
+
+        <div className="userBodyArticle">
+          <h3>Created By : {singleArticle.article.created_by.username}</h3>
         </div>
         <p></p>
-        <div className="articleainbody">
-          <h1>{this.state.singleArticle.article.title}</h1>
-          <div>{this.state.singleArticle.article.body}</div>
+        <div className="articleMainBodySingle">
+          <div>
+            <h1>{singleArticle.article.title}</h1>
+            <div>{singleArticle.article.body}</div>
+            <p>{singleArticle.article.comment_count}</p>
+            <p><strong>{moment(singleArticle.article.created_at).format("MMM Do YY")}</strong></p>
+          </div>
 
-
-          <Vote article_id={this.props.article_id} votes={this.state.singleArticle.article.votes} section={'articles'} />
-          <br></br>
-          <p><strong>{moment(this.state.singleArticle.article.created_at).format("MMM Do YY")}</strong></p>
+          <div>
+            <Vote article_id={article_id} votes={singleArticle.article.votes} section={'articles'} />
+          </div>
         </div>
-        <p>{this.state.singleArticle.article.comment_count}</p>
+
 
         <button className="showCommentBtn" onClick={this.toggleComments}>Show comments</button>
-        {(this.state.commentsToggle ? <Comments article_id={this.state.singleArticle.article._id} user={this.props.user} /> : null)}
-
+        {(commentsToggle ? <Comments article_id={singleArticle.article._id} user={user} /> : null)}
       </div>
     );
   }
@@ -59,12 +66,14 @@ class Article extends React.Component {
   }
 
   fetchArticle = () => {
-    api.getArticle(this.props.article_id).then(article => {
+    const { article_id } = this.props
+    api.getArticle(article_id).then(article => {
       this.setState({
         singleArticle: article,
         loading: false
       })
     }).catch(error => {
+
       this.props.navigate('/error', {
         state: {
           status: 404,
@@ -74,6 +83,11 @@ class Article extends React.Component {
     }
     )
   }
+}
+
+Article.propTypes = {
+  article_id: PropTypes.string,
+  user: PropTypes.object,
 }
 
 export default Article;

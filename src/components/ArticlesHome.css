@@ -7,7 +7,9 @@
  }
    
 .articleBody {
-    border-radius: 25px;
+    display: grid;
+    grid-template-columns: 1fr 0.2fr;
+    border-radius: 10px;
     border: 2px solid #73AD21;
     padding: 20px;  
     border:  1px solid black; 
@@ -18,14 +20,13 @@
     background-color: rgba(100, 95, 95, 0.5);
 }
 
-.article-row {
-    display: flex;
-    height: 50%;
-    width: 50%;
-    margin-left: 25%;
-    margin-right: 20%;
-    flex-direction: column;
-    justify-content: center;
+.singleArticlerow {
+    display: grid;
+    
+    grid-template-columns: 1fr; 
+    margin-left: 15%;
+    margin-right: 15%;
+    
 }
 
 .articlesBtn {
@@ -34,4 +35,7 @@
 }
 
 
+body, p, h1, h2,h3,h4,h5 {
+  font-family: 'Raleway', sans-serif
+}
 

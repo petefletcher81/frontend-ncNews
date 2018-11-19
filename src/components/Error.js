@@ -1,14 +1,14 @@
 import React from 'react';
-import {Link} from '@reach/router'
+import { Link } from '@reach/router'
 const Error = (props) => {
-  console.log(props.location)
+  const { state } = props.location
   return (
     <div>
-    <p>{props.location.state.msg}</p>
-    <p>{props.location.state.status === 404 ? 'Sorry Page Not Found' : 'We have a server problem'}</p>
-    <Link to='/'><button>Home</button></Link> 
+      <p>{state.msg}</p>
+      <p>{state.status === 404 ? 'Sorry Page Not Found' : 'We have a server problem'}</p>
+      <Link to='/'><button>Home</button></Link>
     </div>
-    );
+  );
 }
 
 export default Error;

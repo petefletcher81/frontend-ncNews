@@ -10,7 +10,9 @@ class Topics extends Component {
     topics: []
   }
   render() {
-    console.log(this.props.user)
+    const { topics } = this.state
+    const { user } = this.props
+
     return (
       <div>
         <nav className="topicNav" >
@@ -18,8 +20,8 @@ class Topics extends Component {
         </nav>
 
         <Router>
-          <TopicsHome path='/' topics={this.state.topics} />
-          <Topic path='/:topic_slug/articles' user={this.props.user} />
+          <TopicsHome path='/' topics={topics} />
+          <Topic path='/:topic_slug/articles' user={user} />
         </Router>
       </div>
     );

@@ -4,13 +4,13 @@ import * as api from './utils/api'
 class AddComment extends React.Component {
   state = {
     newComment: '',
-    created_by: this.props.userID,
+    created_by: '',
     error: ''
   }
   render() {
     return (
       <div className="formDiv">
-      {this.state.error && <h4>{this.state.error}</h4>}
+        {this.state.error && <h4>{this.state.error}</h4>}
         <form className='form' onSubmit={this.handleSubmit}>
           <label className="commentLabel" htmlFor='commentBody'> Post A Comment : </label>
           <textarea className="textArea" onChange={this.handleChange} id='commentBody' type='text' value={this.state.newComment} />
@@ -21,6 +21,14 @@ class AddComment extends React.Component {
       </div>
     );
   }
+  componentDidMount = () => {
+    const { user } = this.props
+    this.setState({
+      created_by: user.userID
+    })
+  }
+
+
   handleChange = event => {
     this.setState({
       newComment: event.target.value
@@ -34,12 +42,12 @@ class AddComment extends React.Component {
       comment.created_by = this.props.userObj.username[0].username
       this.props.addComment(comment)
     })
-    if(this.newComment === '') {
-    this.setState({
-      newComment: '',
-      error: ''
-    })
-  }
+    if (this.newComment === '') {
+      this.setState({
+        newComment: '',
+        error: ''
+      })
+    }
     else {
       this.setState({
         error: "Please input some text!"

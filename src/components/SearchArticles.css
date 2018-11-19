@@ -1,0 +1,34 @@
+.articleBodySearch{
+ display:grid;
+ grid-template-columns: 1fr 0.2fr;
+ border: 1px solid black;
+ background-color: rgba(100, 95, 95, 0.5);
+ padding-bottom: 20px;
+ margin-left: 15%;
+ margin-right: 15%;
+ border-radius: 10px;
+ 
+ 
+}
+
+.createdBySearch img {
+  height: 75px;
+}
+
+.searchCompleteBody {
+  padding-top: 20px;
+  padding-bottom: 20px;
+ 
+}
+
+.createdBySearch {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 15px;
+}
+
+.individualArticleResult {
+ padding-bottom: 20px;
+  color: white;
+  padding-left: 5px;
+}

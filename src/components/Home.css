@@ -15,14 +15,14 @@ p, div {
 
 
 .topic-button {
-      padding: 21%;
+      padding: 11%;
     border-radius: 20%;
     background-color: red;
     box-shadow: 1px 1px;
 }
 
 .article-button {
-    padding: 20%;
+    padding: 10%;
     border-radius: 20%;
     background-color: red;
     box-shadow: 1px 1px;
@@ -43,3 +43,43 @@ p, div {
     width: 100%;
 }
 
+.imageLinksHome {
+    display: grid;
+    grid-template-columns:  1fr 1fr;
+
+   
+}
+
+
+.imageLinksHome img {
+    height: 250px;
+   width: 350px;
+}
+
+.containerHome {
+    position: relative;
+    text-align: center;
+    color: white;
+    padding-bottom: 20px;
+}
+.image-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);     
+}
+
+@media (max-width:840px) {
+    .imageLinksHome {
+        display: grid;
+        grid-template-columns:  1fr;
+        
+    }
+    .topicContainer {
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns:  1fr 1fr 1fr;
+        grid-gap: 20px;
+        
+    }
+}

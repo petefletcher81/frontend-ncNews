@@ -10,8 +10,8 @@ class Votes extends React.Component {
 
     return (
       <div className="container-btns">
-        <button className="voteBtn" onClick={() => { this.vote('up') }} disabled={this.state.voteChanged === 1}>LIKE</button>
         <p><strong>VOTES {this.props.votes + this.state.voteChanged}</strong></p>
+        <button className="voteBtn" onClick={() => { this.vote('up') }} disabled={this.state.voteChanged === 1}>LIKE</button>
         <button className="voteBtn" onClick={() => { this.vote('down') }} disabled={this.state.voteChanged === -1}>DISLIKE</button>
       </div >
     );

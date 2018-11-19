@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Router, Link } from '@reach/router';
+import { Router, Link, navigate } from '@reach/router';
 import Home from './components/Home';
 import Articles from './components/Articles';
 import Topics from './components/Topics';
@@ -8,7 +8,8 @@ import Auth from './components/Auth';
 import * as api from './components/utils/api';
 import codeBanner from './components/utils/assets/images/codeBanner.png'
 import Errors from './components/Error';
-import URLerror from './components/URLerror'
+import URLerror from './components/URLerror';
+
 
 
 class App extends Component {
@@ -68,7 +69,7 @@ class App extends Component {
         error: true
       })
     })
-
+    navigate('/')
   }
 
 

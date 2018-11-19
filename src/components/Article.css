@@ -6,7 +6,7 @@
   margin-left: 20%;
   margin-right: 20%;}
 
-.userBody {
+.userBodyArticle {
     border: 2px solid rgb(0, 0, 0);
     background-color: rgba(100, 95, 95, 0.5);
     padding: 5px;  
@@ -15,14 +15,16 @@
     color: white;
 }
 
-.articleMainBody {
+.articleMainBodySingle {
+    display: grid;
+    grid-template-columns: 1fr 0.2fr;
     background-color: rgba(100, 95, 95, 0.5);
-    border-radius: 10px;
+    border-radius: 5px;
     border: 2px solid rgb(0, 0, 0);
     padding: 20px;  
-    padding-top: 1px;
+    padding-top: 10px;
+    padding-bottom: 20px;
     color: white;
-    
 }
 
 h3 {
@@ -34,13 +36,14 @@ h3 {
     border-radius: 10px;
     border: 2px solid rgb(0, 0, 0);
     color: white;
-    box-shadow: 20px;
+    box-shadow: 5px;
     cursor: pointer;
 }
 
 .commentsHeaderImg {
     justify-content: center;
     height: auto;
-    width: 100%;
+    width: 20%;
+    padding-top: 10px;
     
 }
