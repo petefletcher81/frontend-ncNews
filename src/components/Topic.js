@@ -27,17 +27,20 @@ class Topic extends React.Component {
         <h1>{topic_slug}</h1>
 
         {singleTopic.map(articles => {
-          return <div key={articles._id} className="TopicMainBody" ><strong>{articles.title}</strong>
+          return <div key={articles._id} className="TopicMainBody">
             <div className="userName">
+              <strong>{articles.title}</strong>
               <p></p>
               <p>{articles.body}</p>
               <p>Comment Count : {articles.comment_count}</p>
-              <div>
-                <p><strong>{articles.created_by.username}</strong></p>
-                <img src={articles.created_by.avatar_url} alt="userAvatar" /></div></div>
-            <p></p>
-            <Link to={`/articles/${articles._id}`}><button>More info: </button></Link>
-          </div>
+              <Link to={`/articles/${articles._id}`}><button>More info: </button></Link>
+            </div>
+
+            <div className='userAvatar'>
+              <p><strong>{articles.created_by.username}</strong></p>
+              <img src={articles.created_by.avatar_url} alt="userAvatar" />
+              <p></p>
+            </div></div>
 
         })
         }
